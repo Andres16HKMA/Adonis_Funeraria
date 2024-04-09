@@ -27,4 +27,11 @@ export default class DepartmentsController {
         theDepartament.name = body.name;
         return await theDepartament.save();
     }
+
+    // delete
+    public async delete({ params, response }: HttpContextContract) {
+        const theDepartament: Departament = await Departament.findOrFail(params.id);
+        response.status(204);
+        return await theDepartament.delete();
+    }
 }
