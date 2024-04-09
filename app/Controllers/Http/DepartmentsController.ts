@@ -19,4 +19,12 @@ export default class DepartmentsController {
     public async show({params}: HttpContextContract){
         return Departament.findOrFail(params.id);
     }
+
+    // update
+    public async update({ params, request }: HttpContextContract) {
+        const body = request.body();
+        const theDepartament: Departament = await Departament.findOrFail(params.id);
+        theDepartament.name = body.name;
+        return await theDepartament.save();
+    }
 }
