@@ -29,5 +29,12 @@
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.2.2",
     "source-map-support": "^0.5.21"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
