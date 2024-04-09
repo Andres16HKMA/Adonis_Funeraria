@@ -8,4 +8,15 @@ export default class DepartmentsController {
         const theDepartament=await Departament.create(body);
         return theDepartament;
     }
+
+    // get
+    public async index({request}: HttpContextContract){
+        const page = request.input('page', 1);
+        const perPage = request.input('perPage', 20);
+        let departaments:Departament[]= await Departament.query().paginate(page, perPage)
+        return departaments;
+    }
+    public async show({params}: HttpContextContract){
+        return Departament.findOrFail(params.id);
+    }
 }

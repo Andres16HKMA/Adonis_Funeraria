@@ -25,3 +25,5 @@ Route.get('/', async () => {
 })
 
 Route.post("/departaments","DepartmentsController.store");
+Route.get("/departaments","DepartmentsController.index");
+Route.get("/departaments/:id","DepartmentsController.show");
