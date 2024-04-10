@@ -39,3 +39,8 @@ Route.get("/sites","DepartmentsController.index");
 Route.get("/sites/:id","DepartmentsController.show");
 Route.put("/sites/:id","DepartmentsController.update");
 Route.delete("/sites/:id","DepartmentsController.delete");
+Route.post("/halls","HallsController.store");
+Route.get("/halls","HallsController.index");
+Route.get("/halls/:id","HallsController.show");
+Route.put("/halls/:id","HallsController.update");
+Route.delete("/halls/:id","HallsController.delete");
