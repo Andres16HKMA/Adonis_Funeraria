@@ -9,7 +9,7 @@ export default class City extends BaseModel {
   public name: string
 
   @column()
-  public quanSites: number
+  public quan_sites: number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

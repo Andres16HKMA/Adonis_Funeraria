@@ -29,3 +29,8 @@ Route.get("/departaments","DepartmentsController.index");
 Route.get("/departaments/:id","DepartmentsController.show");
 Route.put("/departaments/:id","DepartmentsController.update");
 Route.delete("/departaments/:id","DepartmentsController.delete");
+Route.post("/cities","CitiesController.store");
+Route.get("/cities","CitiesController.index");
+Route.get("/cities/:id","CitiesController.show");
+Route.put("/cities/:id","CitiesController.update");
+Route.delete("/cities/:id","CitiesController.delete");
