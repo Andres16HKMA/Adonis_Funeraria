@@ -1,39 +1,38 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import City from 'App/Models/City';
+import Site from 'App/Models/Site';
 
-export default class CitiesController {
+export default class SitesController {
     // create
     public async store({request}:HttpContextContract){
         let body=request.body();
-        const theCity=await City.create(body);
-        return theCity;
+        const theSite=await Site.create(body);
+        return theSite;
     }
 
     // get
     public async index({request}: HttpContextContract){
         const page = request.input('page', 1);
         const perPage = request.input('perPage', 20);
-        let cities:City[]= await City.query().paginate(page, perPage)
-        return cities;
+        let sites:Site[]= await Site.query().paginate(page, perPage)
+        return sites;
     }
     public async show({params}: HttpContextContract){
-        return City.findOrFail(params.id);
+        return Site.findOrFail(params.id);
     }
 
     // update
     public async update({ params, request }: HttpContextContract) {
         const body = request.body();
-        const theCity: City = await City.findOrFail(params.id);
-        theCity.name = body.name;
-        theCity.quan_sites = body.quan_sites;
-        return await theCity.save();
+        const theSite: Site = await Site.findOrFail(params.id);
+        theSite.city = body.city;
+        theSite.time = body.time;
+        return await theSite.save();
     }
-    
 
     // delete
     public async delete({ params, response }: HttpContextContract) {
-        const theCity: City = await City.findOrFail(params.id);
+        const theSite: Site = await Site.findOrFail(params.id);
         response.status(204);
-        return await theCity.delete();
+        return await theSite.delete();
     }
 }
