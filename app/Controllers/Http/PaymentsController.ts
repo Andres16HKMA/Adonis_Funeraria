@@ -1,37 +1,36 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Payment from 'App/Models/Payment';
 
-import Service from "App/Models/Service";
-
-export default class ServicesController {
+export default class PaymentsController {
     // create
  public async store({request}:HttpContextContract){
     let body=request.body();
-    const theService=await Service.create(body);
-    return theService;
+    const thePayment=await Payment.create(body);
+    return thePayment;
 }
 // get
 public async index({request}: HttpContextContract){
     const page = request.input('page', 1);
     const perPage = request.input('perPage', 20);
-    let services:Service[]= await Service.query().paginate(page, perPage)
-    return services;
+    let payments:Payment[]= await Payment.query().paginate(page, perPage)
+    return payments;
 }
 public async show({params}: HttpContextContract){
-    return Service.findOrFail(params.id);
+    return Payment.findOrFail(params.id);
 }
 
 // update
 public async update({ params, request }: HttpContextContract) {
     const body = request.body();
-    const theService: Service = await Service.findOrFail(params.id);
-    theService.tipo = body.tipo;
-    return await theService.save();
+    const thePayment: Payment = await Payment.findOrFail(params.id);
+    thePayment.caducidad = body.caducidad;
+    return await thePayment.save();
 }
 
 // delete
 public async delete({ params, response }: HttpContextContract) {
-    const theService: Service = await Service.findOrFail(params.id);
+    const thePayment: Payment = await Payment.findOrFail(params.id);
     response.status(204);
-    return await theService.delete();
+    return await thePayment.delete();
 }
 }
