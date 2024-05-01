@@ -20,9 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
 
 Route.post("/departaments","DepartmentsController.store");
 Route.get("/departaments","DepartmentsController.index");
@@ -50,6 +47,7 @@ Route.get("/plans","PlansController.index");
 Route.get("/plans/:id","PlansController.show");
 Route.put("/plans/:id","PlansController.update");
 Route.delete("/plans/:id","PlansController.delete");
+/*
 Route.post("/services","ServicesController.store");
 Route.get("/services","ServicesController.index");
 Route.get("/services/:id","ServicesController.show");
@@ -60,8 +58,9 @@ Route.get("/payments","PaymentsController.index");
 Route.get("/payments/:id","PaymentsController.show");
 Route.put("/payments/:id","PaymentsController.update");
 Route.delete("/payments/:id","PaymentsController.delete");
+
 Route.post("/chats","ChatsController.store");
 Route.get("/chats","ChatsController.index");
 Route.get("/chats/:id","ChatsController.show");
 Route.put("/chats/:id","ChatsController.update");
-Route.delete("/chats/:id","ChatsController.delete");
+Route.delete("/chats/:id","ChatsController.delete");    */

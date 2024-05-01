@@ -36,4 +36,5 @@ export default class CitiesController {
         response.status(204);
         return await theCity.delete();
     }
+    
 }
