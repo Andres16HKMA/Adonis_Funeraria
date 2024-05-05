@@ -18,3 +18,4 @@ logs
 .yarn/install-state.gz
 .pnp.*
 .yarn-integritynode_modules/
+node_modules
