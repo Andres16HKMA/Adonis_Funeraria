@@ -17,4 +17,4 @@ logs
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-.yarn-integrity
+.yarn-integritynode_modules/
