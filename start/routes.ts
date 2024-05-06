@@ -92,3 +92,6 @@ Route.get('/cremacion', 'CremacionsController.index');
 Route.get('/cremacion/:id', 'CremacionsController.show');
 Route.put('/cremacion/:id', 'CremacionsController.update');
 Route.delete('/cremacion/:id', 'CremacionsController.destroy');
+
+Route.post('/login', 'AuthController.login');
+Route.put('/second-factor', 'AuthController.secondFactor');
